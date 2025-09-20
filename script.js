@@ -112,7 +112,7 @@ map.on("style.load", () => {
   createMarker("#388e3c", 120.46088642339056, 29.17655265370726, "China na Segunda Guerra Mundial (Jinhua)", "https://china-segunda-guerra.netlify.app/");
   createMarker("#388e3c", 112.91996898487605, 28.243530325999973, "China na Segunda Guerra Mundial (Changsha)", "https://china-segunda-guerra.netlify.app/");
   createMarker("#388e3c", 96.42619462330937, 21.31670053060128, "China na Segunda Guerra Mundial (Myitkyina)", "https://china-segunda-guerra.netlify.app/");
-  createMarker("#c62828", 44.5147, 48.7086, "Stalingrado", "https://pt.wikipedia.org/wiki/Batalha_de_Stalingrado");
+  createMarker("#c62828", 44.5147, 48.7086, "Stalingrado", "https://historia-stalingrado.netlify.app/");
   createMarker("#f44336", -157.94031607255053, 21.349201007316818, "Ataque a Pearl Harbor", "https://68c981fc0967fd40109825fb--preeminent-piroshki-aa4620.netlify.app/");
   createMarker("#ff5722", 141.324444, 24.780278, "Batalha de Iwo Jima e Okinawa", "https://68c9812f58960d3d6b3057e9--stupendous-melba-cc7d73.netlify.app/");
   createMarker("#3f51b5", 2.332946, 48.848120, "Batalha da França (Paris)", "https://batalhadafranca.netlify.app/");
