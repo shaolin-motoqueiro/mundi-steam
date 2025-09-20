@@ -111,4 +111,19 @@ map.on("style.load", () => {
   // Market Garden
   createMarker("#43a047", 5.4697, 51.4416, "Market Garden Eindhoven", "https://overlord-marketgarden.netlify.app/");
   createMarker("#43a047", 5.8526, 51.8420, "Market Garden Nijmegen", "https://overlord-marketgarden.netlify.app/");
+
+  // Queda de Berlim
+  createMarker("#212121", 13.3889, 52.5167, "Queda de Berlim", "https://quedadeberlim.netlify.app/");
+
+  // Holocausto e Arte na Guerra
+  createMarker("#b71c1c", 19.174583, 50.037472, "Holocausto e Arte na Guerra", "https://holocausto-arte-guerra.netlify.app/");
+
+  // O Brasil na Segunda Guerra (vários pontos)
+  createMarker("#388e3c", 10.954222, 44.221806, "Brasil na 2ª Guerra", "https://febsegundaguerra.netlify.app/");
+  createMarker("#388e3c", 10.94583, 44.26944, "Brasil na 2ª Guerra", "https://febsegundaguerra.netlify.app/");
+  createMarker("#388e3c", 10.333, 43.867, "Brasil na 2ª Guerra", "https://febsegundaguerra.netlify.app/");
+  createMarker("#388e3c", 10.300, 43.933, "Brasil na 2ª Guerra", "https://febsegundaguerra.netlify.app/");
+  createMarker("#388e3c", 10.405556, 44.121944, "Brasil na 2ª Guerra", "https://febsegundaguerra.netlify.app/");
+  createMarker("#388e3c", 10.833, 44.350, "Brasil na 2ª Guerra", "https://febsegundaguerra.netlify.app/");
+  createMarker("#388e3c", 10.100, 44.683, "Brasil na 2ª Guerra", "https://febsegundaguerra.netlify.app/");
 });
