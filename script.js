@@ -40,7 +40,11 @@ zoomOutBtn.addEventListener('click', () => {
 });
 
 // Adiciona marcadores HTML/CSS ao carregar o estilo do mapa
+const siteList = [];
+
 map.on("style.load", () => {
+  // Limpa a lista de eventos para evitar duplicidade
+  siteList.length = 0;
   const createMarker = (color, lng, lat, title = "", url = "#") => {
     // Container do marcador
     const container = document.createElement("div");
@@ -85,8 +89,10 @@ map.on("style.load", () => {
     container.appendChild(marker);
     container.appendChild(label);
 
-    // Altitude baixa (10 metros acima do solo)
-    return new mapboxgl.Marker({element: container, anchor: 'bottom'}).setLngLat([lng, lat, 1]).addTo(map);
+  // Altitude baixa (10 metros acima do solo)
+  // Salva info para o menu suspenso
+  siteList.push({ title, lng, lat });
+  return new mapboxgl.Marker({element: container, anchor: 'bottom'}).setLngLat([lng, lat, 1]).addTo(map);
   };
 
   // Marcadores personalizados para eventos históricos
@@ -131,4 +137,26 @@ map.on("style.load", () => {
   createMarker("#388e3c", 10.405556, 44.121944, "Brasil na 2ª Guerra", "https://febsegundaguerra.netlify.app/");
   createMarker("#388e3c", 10.833, 44.350, "Brasil na 2ª Guerra", "https://febsegundaguerra.netlify.app/");
   createMarker("#388e3c", 10.100, 44.683, "Brasil na 2ª Guerra", "https://febsegundaguerra.netlify.app/");
+
+  // Preenche o menu suspenso de sites/eventos
+  const siteJumpSelect = document.getElementById('siteJumpSelect');
+  // Remove todas as opções exceto o placeholder
+  while (siteJumpSelect.options.length > 1) siteJumpSelect.remove(1);
+  siteList.forEach((site, idx) => {
+    const opt = document.createElement('option');
+    opt.value = idx;
+    opt.textContent = site.title;
+    opt.disabled = false;
+    siteJumpSelect.appendChild(opt);
+  });
+
+  // Ao selecionar um evento/site, centraliza e faz zoom
+  siteJumpSelect.onchange = function() {
+    if (this.value !== "") {
+      const site = siteList[Number(this.value)];
+      map.flyTo({ center: [site.lng, site.lat], zoom: 6, speed: 1.2 });
+      // Volta para o placeholder
+      this.selectedIndex = 0;
+    }
+  };
 });

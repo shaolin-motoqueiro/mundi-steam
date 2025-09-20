@@ -13,20 +13,20 @@
 	<!-- Three.js -->
 	<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 
-	<style>
-		body { margin: 0; padding: 0; }
-		#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-	</style>
+	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-		<div style="position:absolute;top:12px;left:12px;z-index:10;">
-			<select id="mapStyleSelect" style="font-size:16px;padding:4px 8px;border-radius:6px;box-shadow:0 2px 8px #0002;">
+		<div id="topControlBar">
+			<select id="mapStyleSelect">
 				<option value="mapbox://styles/mapbox/satellite-streets-v12">Satélite + Ruas</option>
 				<option value="mapbox://styles/mapbox/streets-v12">Ruas</option>
 				<option value="mapbox://styles/mapbox/light-v11">Claro</option>
 				<option value="mapbox://styles/mapbox/dark-v11">Escuro</option>
 				<option value="mapbox://styles/mapbox/outdoors-v12">Outdoors</option>
 				<option value="mapbox://styles/mapbox/satellite-v9">Satélite puro</option>
+			</select>
+			<select id="siteJumpSelect" placeholder="Lista de eventos">
+				<option value="" disabled selected>Lista de eventos</option>
 			</select>
 		</div>
 		<div id="zoomControl" style="position:absolute;top:60px;right:18px;z-index:10;display:flex;flex-direction:column;align-items:center;">
